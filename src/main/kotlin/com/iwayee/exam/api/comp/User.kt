@@ -17,18 +17,5 @@ data class User(
         var phone: String = "",
         var email: String = "",
         var create_at: String = "",
-        var groups: JsonArray = JsonArray(),
-        var activities: JsonArray = JsonArray()
 ) {
-  fun addActivity(aid: Int) {
-    if (!activities.contains(aid)) {
-      activities.add(aid);
-    }
-  }
-
-  fun addGroup(gid: Int) {
-    if (!groups.contains(gid)) {
-      groups.add(gid)
-    }
-  }
 }

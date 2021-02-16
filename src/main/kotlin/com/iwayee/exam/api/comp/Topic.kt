@@ -1,20 +1,15 @@
 package com.iwayee.exam.api.comp
 
-import com.iwayee.exam.define.GroupPosition
-import com.iwayee.exam.define.SexType
+import com.iwayee.exam.define.TopicType
 
 data class Topic(
         var id: Int = 0,
-        var scores: Int = 0,
-        var pos: Int = GroupPosition.POS_MEMBER.ordinal,
-        var sex: Int = SexType.MALE.ordinal,
-        var at: Long = 0L,
-        var nick: String = "",
-        var wx_nick: String = ""
+        var type: Int = TopicType.SINGLE.ordinal,
+        var subject_id: Int = 0,
+        var weight: Long = 0L,
+        var title: String = "",
+        var items: String = "",
+        var answer: String = ""
 ) {
-  fun fromUser(user: User) {
-    sex = user.sex
-    wx_nick = user.wx_nick
-    nick = user.nick
-  }
+  //
 }

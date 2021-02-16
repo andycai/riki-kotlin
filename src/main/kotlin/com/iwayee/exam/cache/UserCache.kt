@@ -66,28 +66,6 @@ object UserCache : BaseCache() {
     usersForName[user.username] = user
   }
 
-  fun toPlayer(usersMap: Map<Int, User>): JsonObject {
-    var jo = JsonObject()
-    usersMap?.forEach { (key, value) ->
-      var player = Paper()
-      player.fromUser(value)
-      jo.put(key.toString(), player.toJson())
-    }
-    return jo
-  }
-
-  fun toMember(usersMap: Map<Int, User>, members: JsonArray): JsonArray {
-    var jr = JsonArray()
-    for (item in members) {
-      var mb = (item as JsonObject).mapTo(Topic::class.java)
-      usersMap[mb.id]?.let {
-        mb.fromUser(it)
-      }
-      jr.add(JsonObject.mapFrom(mb))
-    }
-    return jr
-  }
-
   fun create(jo: JsonObject, action: (Long) -> Unit) {
     UserDao.create(jo) {
       if (it > 0L) {
