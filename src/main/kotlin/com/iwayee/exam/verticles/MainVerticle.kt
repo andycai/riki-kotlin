@@ -91,8 +91,9 @@ class MainVerticle: AbstractVerticle() {
     post("/register", UserSystem::register, false)
     post("/logout", UserSystem::logout)
 
-    // 错题
-    // 训练
+    // 未学题目
+    // 错题回顾
+    // 学习训练
     get("/practices/:id", ExamSystem::getExamById)
     post("/practices/take/:id", ExamSystem::getExamById)
     put("/practices/:id", ExamSystem::update)
