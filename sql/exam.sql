@@ -95,7 +95,7 @@ CREATE TABLE `topic`
     `id`         int(11) unsigned    NOT NULL AUTO_INCREMENT COMMENT '题目ID',
     `type`       tinyint(2) unsigned NOT NULL DEFAULT 1 COMMENT '题目类型：1:单选题;2:多选题;3:判断题',
     `subject_id` tinyint(2) unsigned NOT NULL DEFAULT 1 COMMENT '科目ID',
-    `weight`     tinyint(2) unsigned NOT NULL DEFAULT 1 COMMENT '权重',
+    `weight`     smallint(4) unsigned NOT NULL DEFAULT 1 COMMENT '权重',
     `title`      varchar(128)        NOT NULL COMMENT '标题',
     `items`      text COMMENT '题目可选答案',
     `answer`     varchar(64) COMMENT '答案',
